@@ -10,20 +10,13 @@ import { RecipeService } from '../recipe.service';
 })
 export class RecipesComponent implements OnInit {
 
-  /*
-  recipe: Recipe  = {
-    id: 1,
-    name: 'Kladdkaka'
-  };
-  */
-  //recipes = RECIPES;
   recipes: Recipe[] = [];
 
   constructor(private recipeService: RecipeService) { }
 
   getRecipes(): void {
     this.recipeService.getRecipes()
-    .subscribe(recipes => this.recipes = recipes);
+      .subscribe(recipes => this.recipes = recipes);
   }
 
   selectedRecipe?: Recipe;

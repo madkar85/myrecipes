@@ -1,7 +1,20 @@
 <div *ngIf="recipe">
-    <h2>{{recipe.name | uppercase}} Detaljer</h2>
-    <div><span>id: </span>{{recipe.id}}</div>
-    <div>
+    <h2>{{recipe.name | uppercase}}</h2>
+    <!-- <div><span>id: </span>{{recipe.id}}</div> -->
+    <div>Ingredisenser: 
+        <li *ngFor='let ingredient of recipe.ingrediense'>
+            {{ingredient}}
+        </li>
+    <div> Gör så här:
+        <ol class=steps>
+            <li *ngFor='let step of recipe.steps'>
+                {{step}}
+            </li>
+        </ol>
+   
+    </div>    
+    </div>
+    <div class=search>
         <label for="recipe-name">Recept: </label>
         <input id="recipe-name" [(ngModel)]="recipe.name" placeholder="name">
     </div>
