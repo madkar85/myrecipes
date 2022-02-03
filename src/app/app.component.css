@@ -1,0 +1,7 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    color: rgb(9, 80, 80);
+    padding-left: 4em;
+    padding-right: 4em;
+}
