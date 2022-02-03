@@ -6,17 +6,24 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
+import { RecipeSearchComponent } from './recipe-search/recipe-search.component';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import {InMemoryDataService} from './in-memory-data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipesComponent,
-    RecipeDetailComponent
+    RecipeDetailComponent,
+    RecipeSearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false})
   ],
   providers: [],
   bootstrap: [AppComponent]
