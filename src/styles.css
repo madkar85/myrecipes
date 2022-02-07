@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    margin: 2em;
-    border-width: 3em;
+    border-style: solid;
+    margin: 0;
+    border-width: 0.5em;
     border-color: darkcyan;
+    height: 100%;
+    padding-left: 1em;
+    border-radius: 25px;
+
 }

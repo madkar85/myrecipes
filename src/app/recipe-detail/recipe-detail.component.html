@@ -1,18 +1,19 @@
 <div *ngIf="recipe">
     <h2>{{recipe.name | uppercase}}</h2>
     <!-- <div><span>id: </span>{{recipe.id}}</div> -->
-    <div>Ingredisenser: 
+    <a class=headLine>Ingredisenser:</a> 
+    <div class=ingredients>
         <li *ngFor='let ingredient of recipe.ingrediense'>
             {{ingredient}}
         </li>
-    <div> Gör så här:
+    </div>
+    <a class=headLine>Gör så här:</a> 
+    <div class=howTo>
         <ol class=steps>
             <li *ngFor='let step of recipe.steps'>
                 {{step}}
             </li>
-        </ol>
-   
-    </div>    
+        </ol> 
     </div>
     <div class=search>
         <label for="recipe-name">Recept: </label>
