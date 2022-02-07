@@ -3,6 +3,7 @@ import { Recipe } from '../recipe';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { RecipeService } from '../recipe.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -10,7 +11,6 @@ import { RecipeService } from '../recipe.service';
   styleUrls: ['./recipe-detail.component.css']
 })
 export class RecipeDetailComponent implements OnInit {
-
   @Input() recipe?: Recipe;
   
   constructor(private route: ActivatedRoute,
