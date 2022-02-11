@@ -20,27 +20,29 @@ export class RecipeService {
 
   private recipesURL = 'api/recipes';
 
+  // handles errors
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       return of(result as T);
     }
   }
 
+  // Gets an array of recipes and also handles possible errors
   getRecipes(): Observable<Recipe[]> {
     return this.http.get<Recipe[]>(this.recipesURL)
     .pipe(catchError(this.handleError<Recipe[]>('getRecipes', [])));
-    //const recipes = of(RECIPES)
-    //return recipes;
+    
   }
 
+  // gets a specific recipe and handles possible errors
   getRecipe(id: number): Observable<Recipe> {
     const url = `${this.recipesURL}/${id}`;
     return this.http.get<Recipe>(url).pipe
     (catchError(this.handleError<Recipe>('getRecipe id=${id}')));
-    //const recipe = RECIPES.find(r => r.id === id)!;
-   // return of(recipe);
+    
   }
 
+  // the search-function, returns an empty array if no recipes match the search
   searchRecipes(term: string): Observable<Recipe[]> {
     if(!term.trim()) {
       return of([]);

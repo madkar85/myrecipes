@@ -1,12 +1,11 @@
 <h2>Alla recept</h2>
 <ul class="recipes">
-    <li *ngFor="let recipe of recipes">
-        <a routerLink="/detail/{{recipe.id}}">
+    <li *ngFor="let recipe of recipes"> <!-- repeats all items (recipe) in an array (recipes) -->
+        <a routerLink="/detail/{{recipe.id}}"> <!-- the link to the recipe-page -->
             <span class="badge">{{recipe.name}}</span>
         </a>
     </li>
 </ul>
-<!-- <app-recipe-detail [recipe]="selectedRecipe"></app-recipe-detail> -->
 
 <app-recipe-search></app-recipe-search>
 

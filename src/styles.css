@@ -4,8 +4,11 @@ body {
     margin: 0;
     border-width: 0.5em;
     border-color: darkcyan;
-    height: 100%;
     padding-left: 1em;
     border-radius: 25px;
 
+}
+
+html, body {
+    height: 100%;
 }
