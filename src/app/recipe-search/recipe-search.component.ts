@@ -22,7 +22,7 @@ export class RecipeSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //deBounceTime means to wait xxmilliseconds after each keystroke before considering the term
+    //deBounceTime means to wait xx milliseconds after each keystroke before considering the term
     //disctinctUntilChanged ignores new term if same as previous term
     //switchMap switched to new search observable each time the term changes
     this.recipes$ = this.searchTerms.pipe(debounceTime(300), 

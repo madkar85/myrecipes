@@ -7,6 +7,7 @@ import { Recipe } from './recipe';
 })
 export class InMemoryDataService {
 
+  // mock-data for the project
   createDb () {
     const recipes = [
       {id: 2, name: 'Chocolate chip cookies', 
